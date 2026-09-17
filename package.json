@@ -1,0 +1,105 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "podman",
+  "title": "Podman",
+  "description": "Manage Podman containers, images, pods, volumes and machines from Raycast.",
+  "icon": "podman-icon.png",
+  "author": "lucas_leon",
+  "categories": ["Developer Tools"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "containers",
+      "title": "Manage Containers",
+      "subtitle": "Podman",
+      "description": "List, start, stop, inspect and view logs of Podman containers.",
+      "mode": "view"
+    },
+    {
+      "name": "images",
+      "title": "Manage Images",
+      "subtitle": "Podman",
+      "description": "List, pull, run and remove Podman images.",
+      "mode": "view"
+    },
+    {
+      "name": "pods",
+      "title": "Manage Pods",
+      "subtitle": "Podman",
+      "description": "List, start, stop and remove Podman pods.",
+      "mode": "view"
+    },
+    {
+      "name": "volumes",
+      "title": "Manage Volumes",
+      "subtitle": "Podman",
+      "description": "List, inspect and remove Podman volumes.",
+      "mode": "view"
+    },
+    {
+      "name": "machine",
+      "title": "Manage Machines",
+      "subtitle": "Podman",
+      "description": "Start, stop and inspect Podman machines.",
+      "mode": "view"
+    },
+    {
+      "name": "menubar",
+      "title": "Podman Status",
+      "subtitle": "Podman",
+      "description": "Running container count and quick actions in the menu bar.",
+      "mode": "menu-bar",
+      "interval": "1m"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "podmanPath",
+      "title": "Podman Binary",
+      "description": "Full path to the podman executable. Leave empty to auto-detect Homebrew and podman.io installs.",
+      "type": "textfield",
+      "required": false,
+      "placeholder": "/opt/homebrew/bin/podman"
+    },
+    {
+      "name": "terminalApp",
+      "title": "Terminal",
+      "description": "Terminal application used for interactive shells.",
+      "type": "dropdown",
+      "required": false,
+      "default": "Terminal",
+      "data": [
+        { "title": "Terminal", "value": "Terminal" },
+        { "title": "iTerm2", "value": "iTerm" }
+      ]
+    },
+    {
+      "name": "logTail",
+      "title": "Log Lines",
+      "description": "Number of log lines to load when viewing container logs.",
+      "type": "textfield",
+      "required": false,
+      "default": "200",
+      "placeholder": "200"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^2.4.1",
+    "@raycast/utils": "^2.3.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.2.0",
+    "@types/node": "22.19.17",
+    "@types/react": "19.0.10",
+    "eslint": "^9.39.0",
+    "prettier": "^3.9.7",
+    "typescript": "^5.9.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
