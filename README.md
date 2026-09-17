@@ -32,13 +32,3 @@ npm run dev
 
 - macOS with Raycast
 - Podman 4 or newer with a machine created (`podman machine init`)
-
-## Icon
-
-`assets/podman-icon.svg` is the source. Render it to PNG with transparent corners using:
-
-```sh
-swift scripts/render-icon.swift assets/podman-icon.svg assets/podman-icon.png
-```
-
-Do not use `qlmanage` for this, it fills transparent areas with opaque white.
